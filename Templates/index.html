@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Analyser and Visualizer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">AnalystAI</div>
+    <ul class="nav-links">
+      <li>Home</li>
+      <li>About</li>
+      <li>Resources</li>
+      <li>Explore</li>
+      <li>Help</li>
+      <li>Contact Us</li>
+      <li>Pricing</li>
+    </ul>
+    <div class="nav-buttons">
+      <button class="login-btn">Log In</button>
+      <button class="signup-btn">Sign Up</button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Your <span class="highlight">Personal Data Analyst</span></h1>
+    <p>Connect your data, and get insights in seconds. No coding required.</p>
+    <button class="cta-btn" onclick="scrollToSection()">Try for free →</button>
+  </section>
+
+  <!-- Image Section -->
+  <section class="image-section">
+    <img
+      src="{{ url_for('static', filename='Media-Data-Analysis.jpeg') }}"
+      alt="Dashboard Preview"
+    />
+  </section>
+
+  <!-- Form Section -->
+  <section class="form">
+    <div class="data">Provide Data</div>
+
+    <form id="analyzeForm" action="/analyze" method="POST" enctype="multipart/form-data">
+      <input class="file-input" type="file" name="file" accept=".csv" required>
+      <button class="submit-btn" type="submit">Analyze Data</button>
+    </form>
+
+    <!-- ⭐ RESULT SECTION ADDED HERE -->
+    <div id="result" style="margin-top: 20px; font-size: 18px; text-align:center;"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 AnalystAI — All rights reserved.
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
